@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/travelapp.css') }}">
@@ -20,7 +21,21 @@
       <div id="inner-container">
         <div id="item-container">
           <div id="input-output-container">
-            <form id="input">INPUT</form>
+            <form id="input" action="" method="post" novalidate>
+              {{ form.hidden_tag() }}
+              <p id="label">
+                {{ form.code.label }}
+              </p>
+			  <p id="code">
+                {{ form.code(size=6) }}
+				{% for error in form.code.errors %}
+				<br>
+				<p class="error-details">[{{ error }}]</p>
+				<br>
+				{% endfor %}
+              </p>
+              <p id="submit">{{ form.submit() }}</p>
+            </form>
           </div>
         </div>
       </div>
