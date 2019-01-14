@@ -75,8 +75,3 @@ form {
   height: 25vh;
   width: 25vh;
 }
-
-#error-details {
-  font-size = 0.8em;
-  color: red;
-}

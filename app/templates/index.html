@@ -24,16 +24,14 @@
             <form id="input" action="" method="post" novalidate>
               {{ form.hidden_tag() }}
               <p id="label">
-                {{ form.code.label }}
+                {{ form.confirmation.label }}
               </p>
 			  <p id="code">
-                {{ form.code(size=6) }}
-				{% for error in form.code.errors %}
-				<br>
-				<p class="error-details">[{{ error }}]</p>
-				<br>
-				{% endfor %}
+                {{ form.confirmation(size=6) }}
               </p>
+			  <p id="current" style="font-size: 0.8em">
+			    Current code: <span  style="color: red;">{{ code }}</span>
+			  </p>
               <p id="submit">{{ form.submit() }}</p>
             </form>
           </div>
