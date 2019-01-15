@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+            <form id="input" action="" method="post" novalidate>
+              {{ form.hidden_tag() }}
+              <p id="label">
+                {{ form.confirmation.label }}
+              </p>
+			  <p id="code">
+                {{ form.confirmation(size=6) }}
+              </p>
+			  <p id="current" style="font-size: 0.8em">
+			    Current code: <span  style="color: red;">{{ code }}</span>
+			  </p>
+              <p id="submit">{{ form.submit() }}</p>
+            </form>
+{% endblock %}

@@ -11,6 +11,6 @@ def index():
 	
 	if request.method == 'POST' and form.validate_on_submit():
 		code = request.form['confirmation']
-		return render_template('index.html', form=form, code=code)
+		return render_template('form.html', form=form, code=code)
 	else:
-		return render_template('index.html', form=form, code=code)
+		return render_template('form.html', form=form, code=code)
