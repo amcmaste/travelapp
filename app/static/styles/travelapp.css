@@ -75,3 +75,19 @@ form {
   height: 25vh;
   width: 25vh;
 }
+
+#reservation {
+  
+}
+
+#current-reservation {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#code {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
