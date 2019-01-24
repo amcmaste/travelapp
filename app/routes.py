@@ -1,24 +1,37 @@
-from flask import render_template, flash, redirect, request
+from flask import render_template, flash, redirect, request, jsonify
 from app import app
 from app.forms import InputForm
 from app.reservations import reservation_bank
-from app.functions import retrieve
+from app.functions import lookup
 
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
+@app.route('/index', methods=['GET'])
 
 def index():
-	code = ""
 	form = InputForm()
-	res = reservation_bank
 	
-	if request.method == 'POST' and form.validate_on_submit():
-		reservation = retrieve(request.form['confirmation'], res)
-		return render_template('reservation.html', reservation=reservation)
-	
-	else:
-	
-		for item in res:
-			print(item.confirmation)
+	for item in reservation_bank:
+		print(item.confirmation)
 		
-		return render_template('form.html', form=form, code=code)
+	return render_template('form.html', form=form)
+
+@app.route('/retreive', methods=['POST'])
+def retreive():
+	form = InputForm()
+	data = request.form['confirmation']
+	exists = False
+	
+	for item in reservation_bank:
+		if str(data).lower() == str(item.confirmation).lower():
+			exists = True
+		else:
+			pass
+	
+	if exists == True:
+		print ("The reservation exists!")
+	elif exists == False:
+		print("The reservation does not exist.")
+	else:
+		print ("There was an error.")
+		
+	return render_template('form.html', form=form)

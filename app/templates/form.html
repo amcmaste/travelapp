@@ -1,14 +1,9 @@
 {% extends "index.html" %}
 
 {% block content %}
-            <form id="input" action="" method="post" novalidate>
-              {{ form.hidden_tag() }}
-              <p id="label">
-                {{ form.confirmation.label }}
-              </p>
-			  <p id="code">
-                {{ form.confirmation(size=6) }}
-              </p>
-              <p id="submit">{{ form.submit() }}</p>
-            </form>
+			<form id="input" action="{{ url_for('retreive') }}" method="post">
+			  <p id="label">Confirmation Code:</p>
+			  <p id="code"><input type="text" name="confirmation" size="6"></p>
+			  <p id="submit"><input type="submit" value="submit"></p>
+			</form>
 {% endblock %}

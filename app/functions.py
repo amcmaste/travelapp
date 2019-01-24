@@ -1,4 +1,4 @@
-def retrieve(confnum, reservations):
+def lookup(confnum, reservations):
 	for reservation in reservations:
 		if reservation.confirmation == confnum:
 			return reservation.type
