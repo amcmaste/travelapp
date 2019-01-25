@@ -4,8 +4,8 @@ from app.forms import InputForm
 from app.reservations import reservation_bank
 from app.functions import lookup
 
-@app.route('/', methods=['GET'])
-@app.route('/index', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 
 def index():
 	form = InputForm()
@@ -15,23 +15,15 @@ def index():
 		
 	return render_template('form.html', form=form)
 
-@app.route('/retreive', methods=['POST'])
-def retreive():
-	form = InputForm()
-	data = request.form['confirmation']
-	exists = False
+@app.route('/retrieve', methods=['GET', 'POST'])
+def retrieve():
+	data = request.form['number']
 	
 	for item in reservation_bank:
 		if str(data).lower() == str(item.confirmation).lower():
-			exists = True
+			data = lookup(item.confirmation, reservation_bank)
+			return jsonify({'type': data})
 		else:
 			pass
-	
-	if exists == True:
-		print ("The reservation exists!")
-	elif exists == False:
-		print("The reservation does not exist.")
-	else:
-		print ("There was an error.")
-		
-	return render_template('form.html', form=form)
+			
+	return jsonify({'type': 'Reservation Not Found'})
