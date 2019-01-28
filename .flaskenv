@@ -1,2 +1,2 @@
 FLASK_APP=travelapp.py
-SECRET_KEY='secret'
+SECRET_KEY='1569153217894123'

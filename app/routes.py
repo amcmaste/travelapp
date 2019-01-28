@@ -1,29 +1,18 @@
-from flask import render_template, flash, redirect, request, jsonify
+#Reworked
+
+#Imports
+from flask import render_template
 from app import app
-from app.forms import InputForm
-from app.reservations import reservation_bank
-from app.functions import lookup
 
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/index', methods=['GET', 'POST'])
-
+#Routes
+@app.route('/', methods=['GET'])
+def home():
+	return render_template('index.html')
+	
+@app.route('/input', methods=['GET'])
 def index():
-	form = InputForm()
+	return render_template('input.html')
 	
-	for item in reservation_bank:
-		print(item.confirmation)
-		
-	return render_template('form.html', form=form)
-
-@app.route('/retrieve', methods=['GET', 'POST'])
-def retrieve():
-	data = request.form['number']
-	
-	for item in reservation_bank:
-		if str(data).lower() == str(item.confirmation).lower():
-			data = lookup(item.confirmation, reservation_bank)
-			return jsonify({'type': data})
-		else:
-			pass
-			
-	return jsonify({'type': 'Reservation Not Found'})
+@app.route('/output', methods=['GET'])
+def index():
+	return render_template('output.html')
