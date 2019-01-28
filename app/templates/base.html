@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 
+<!-- Reworked -->
+
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/travelapp.css') }}">
-  <title>TravelApp</title>
+    {% block title %}{% endblock %}
 </head>
   
 <body>
   <div id="outer-container">
     <nav id="navbar">
       <div id="logo-container">
-        <a href="#">LOGO</a>
+        <a href="#">HOME</a>
       </div>
       <div id="link-container">
-        <a href="#">APP</a>
-        <a href="#">ABOUT</a>
+        <a href="#">INPUT</a>
+        <a href="#">OUTPUT</a>
       </div>
     </nav>
     <div id="middle-container">
       <div id="inner-container">
-        <div id="item-container">
-          <div id="input-output-container">
-		    {% block content %}{% endblock %}
+        <div id="widget-container">
+          <div id="content-container">
+            {% block content %}{% endblock %}
           </div>
         </div>
       </div>
@@ -29,7 +31,5 @@
   </div>
   <script type=text/javascript src="{{ url_for('static', 
     filename='jquery.js') }}"></script>
-  <script type=text/javascript src="{{ url_for('static', 
-    filename='lookups.js') }}"></script>
 </body>
 </html>
