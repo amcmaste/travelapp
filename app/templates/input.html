@@ -1,10 +1,11 @@
-{% extends "index.html" %}
+<!-- Reworked -->
+
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Input</title>
+{% endblock %}
 
 {% block content %}
-			<form id="input" action="{{ url_for('retrieve') }}" method="post">
-			  <p id="label">Confirmation Code:</p>
-			  <p id="code"><input id="confirm" type="text" name="confirmation" size="6"></p>
-			  <p id="alerts"></p>
-			  <p id="submit"><input type="submit" value="submit"></p>
-			</form>
+            <div>Input</div>
 {% endblock %}

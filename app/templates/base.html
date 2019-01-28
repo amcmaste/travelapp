@@ -12,11 +12,11 @@
   <div id="outer-container">
     <nav id="navbar">
       <div id="logo-container">
-        <a href="#">HOME</a>
+        <a href="{{ url_for('home') }}">HOME</a>
       </div>
       <div id="link-container">
-        <a href="#">INPUT</a>
-        <a href="#">OUTPUT</a>
+        <a href="{{ url_for('input') }}">INPUT</a>
+        <a href="{{ url_for('output') }}">OUTPUT</a>
       </div>
     </nav>
     <div id="middle-container">
