@@ -7,13 +7,13 @@ from wtforms.validators import DataRequired
 class AddReservation(FlaskForm):
 	confirmation = StringField('Confirmation', validators=[DataRequired()])
 	type = SelectField('Type', choices=[('airline', 'Airline'), ('hotel', 'Hotel'), 
-		('car', 'Car')], validators=[DataRequired()])
-	company = StringField('Company', validators=[DataRequired()])
-	start_date = DateField('Start Date', validators=[DataRequired()])
-	end_date = DateField('End Date', validators=[DataRequired()])
-	cost = IntegerField('Cost', validators=[DataRequired()])
-	submit = SubmitField('Submit', validators=[DataRequired()])
+		('car', 'Car')])
+	company = StringField('Company')
+	start_date = StringField('Start Date')
+	end_date = StringField('End Date')
+	cost = IntegerField('Cost')
+	submit = SubmitField('Submit')
 
 class LookupReservation(FlaskForm):
 	confirmation = StringField('Confirmation', validators=[DataRequired()])
-	submit = SubmitField('Submit', validators=[DataRequired()])
+	submit = SubmitField('Submit')

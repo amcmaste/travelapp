@@ -14,17 +14,17 @@ def input():
 	inputform = AddReservation()
 	return render_template('inputform.html', form=inputform)
 	
-@app.route('/add', methods=['POST'])
+@app.route('/add', methods=['GET', 'POST'])
 def add():
 	result = write_db(request.form['confirmation'])
-	return jsonify({'entry': result})
+	return result
 	
 @app.route('/output', methods=['GET', 'POST'])
 def output():
 	outputform = LookupReservation()
 	return render_template('outputform.html', form=outputform)
 	
-@app.route('/lookup', methods=['POST'])
+@app.route('/lookup', methods=['GET', 'POST'])
 def lookup():
 	result = read_db(request.form['confirmation'])
-	return jsonify({'entry': result})
+	return result

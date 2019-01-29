@@ -11,7 +11,7 @@ $(document).ready(function() {
 	})
 	.done(function(response) {
 	
-	  alert(response.entry);
+	  alert(response);
 	
 	});
 	
