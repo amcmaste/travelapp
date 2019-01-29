@@ -3,6 +3,7 @@
 #Imports
 from flask import render_template
 from app import app
+from app.forms import AddReservation, LookupReservation
 
 #Routes
 @app.route('/', methods=['GET'])
@@ -11,8 +12,10 @@ def home():
 	
 @app.route('/input', methods=['GET'])
 def input():
-	return render_template('input.html')
+	inputform = AddReservation()
+	return render_template('inputform.html', form=inputform)
 	
 @app.route('/output', methods=['GET'])
 def output():
-	return render_template('output.html')
+	outputform = LookupReservation()
+	return render_template('outputform.html', form=outputform)

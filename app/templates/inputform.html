@@ -1,0 +1,7 @@
+{% extends "input.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block inputform %}
+  {{ wtf.quick_form(form) }}
+{% endblock %}

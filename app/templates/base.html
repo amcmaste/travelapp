@@ -16,18 +16,18 @@
       <a class="navbar-brand" href="{{ url_for('home') }}">HOME</a>
 	</div>
 	<ul class="nav navbar-nav navbar-right">
-      <li><a href="{{ url_for('input') }}">INPUT</a></li>
       <li><a href="{{ url_for('output') }}">OUTPUT</a></li>
+      <li><a href="{{ url_for('input') }}">INPUT</a></li>
 	</ul>
   </div>
 </div>
 {% endblock %}
 
 {% block content %}
-<div id="middle-container" class="column" align="center">
-  <div id="inner-container" class="row" align="center">
-    <div id="core-container"class="column" align="center">
-      <div id="widget-container" class="row" align="center">
+<div id="middle-container" class="column container" align="center">
+  <div id="inner-container" class="row container" align="center">
+    <div id="core-container"class="column container" align="center">
+      <div id="widget-container" class="row container" align="center">
         {% block widget %}{% endblock %}
       </div>
     </div>
