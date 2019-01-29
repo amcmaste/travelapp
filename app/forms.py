@@ -11,8 +11,8 @@ class AddReservation(FlaskForm):
 	type = SelectField('Type', choices=[('airline', 'Airline'), ('hotel', 'Hotel'), 
 		('car', 'Car')], validators=[DataRequired()])
 	company = StringField('Company', validators=[DataRequired()])
-	startdate = DateField('Start Date', validators=[DataRequired()])
-	enddate = DateField('End Date', validators=[DataRequired()])
+	startdate = DateField('Start Date', id="start_date", validators=[DataRequired()])
+	enddate = DateField('End Date', id="end_date", validators=[DataRequired()])
 	cost = IntegerField('Cost', validators=[DataRequired()])
 	submit = SubmitField('Submit', validators=[DataRequired()])
 

@@ -4,14 +4,14 @@ $(document).ready(function() {
     
 	$.ajax({
 	  data : {
-	    number : $('#confirm').val()
+	    confirmation : $('#confirmation').val()
 	  },
 	  type : 'POST',
-	  url : '/retrieve'
+	  url : '/lookup'
 	})
 	.done(function(data) {
 	
-	  $('#alerts').text(data.type)
+	  alert(data.confirmation);
 	
 	});
 	
