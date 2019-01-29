@@ -5,3 +5,9 @@
 {% block inputform %}
   {{ wtf.quick_form(form) }}
 {% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script type=text/javascript src="{{ url_for('static', 
+    filename='add.js') }}"></script>
+{% endblock %}

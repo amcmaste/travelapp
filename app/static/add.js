@@ -7,7 +7,7 @@ $(document).ready(function() {
 	    confirmation : $('#confirmation').val()
 	  },
 	  type : 'POST',
-	  url : '/lookup'
+	  url : '/add'
 	})
 	.done(function(response) {
 	

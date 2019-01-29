@@ -1,5 +1,3 @@
-#Reworked
-
 #Imports
 import os
 

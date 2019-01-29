@@ -1,5 +1,3 @@
-#Reworked
-
 #Imports
 from app import db
 
