@@ -2,6 +2,15 @@
   background-color: rgb(5, 25, 60);
 }
 
+.blank-space {
+  height: 10vh;
+  width: 60vw;
+}
+
+.pan {
+  display: none;
+}
+
 a {
   color: white !important;
 }
