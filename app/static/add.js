@@ -4,7 +4,12 @@ $(document).ready(function() {
     
 	$.ajax({
 	  data : {
-	    confirmation : $('#confirmation').val()
+	    confirmation : $('#confirmation').val(),
+		type: $('#type').val(),
+		company : $('#company').val(),
+		start_date : $('#start_date').val(),
+		end_date : $('#end_date').val(),
+		cost: $('#cost').val()
 	  },
 	  type : 'POST',
 	  url : '/add'

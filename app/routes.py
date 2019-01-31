@@ -16,7 +16,9 @@ def input():
 	
 @app.route('/add', methods=['GET', 'POST'])
 def add():
-	result = write_db(request.form['confirmation'])
+	result = write_db(request.form['confirmation'], request.form['type'],
+					  request.form['company'], request.form['start_date'], 
+					  request.form['end_date'], request.form['cost'])
 	return result
 	
 @app.route('/output', methods=['GET', 'POST'])
