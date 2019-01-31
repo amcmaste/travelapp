@@ -6,6 +6,10 @@
   {{ wtf.quick_form(form) }}
 {% endblock %}
 
+{% block resdisplay %}
+  <div id="reservation-details">Reservation Details</div>
+{% endblock %}
+
 {% block scripts %}
   {{ super() }}
   <script type=text/javascript src="{{ url_for('static', 
