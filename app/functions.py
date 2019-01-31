@@ -2,6 +2,7 @@
 from app import db
 from app.models import Reservation
 from datetime import datetime
+from flask import jsonify
 
 #Functions
 def write_db(con, typ, com, sta, end, cos):
@@ -17,8 +18,10 @@ def write_db(con, typ, com, sta, end, cos):
 	
 	#Verify that new entry has been added
 	result = Reservation.query.filter_by(confirmation=con).first()
-	return 'Entry ' + result.confirmation + ' added to database'
+	return jsonify({'confirmation': result.confirmation, 'type': result.type, 'company': result.company, 
+			'start_date': result.start_date, 'end_date': result.end_date, 'cost': result.cost})
 	
 def read_db(confnum):
 	result = Reservation.query.filter_by(confirmation=confnum).first()
-	return 'Entry ' + result.confirmation + ' retreived from database'
+	return jsonify({'confirmation': result.confirmation, 'type': result.type, 'company': result.company, 
+			'start_date': result.start_date, 'end_date': result.end_date, 'cost': result.cost})

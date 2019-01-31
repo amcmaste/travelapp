@@ -16,7 +16,7 @@ $(document).ready(function() {
 	})
 	.done(function(response) {
 	
-	  alert(response);
+	// ADD OPTIONAL RESPONSE HERE
 	
 	});
 	
