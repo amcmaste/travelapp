@@ -7,8 +7,8 @@ from wtforms.fields.html5 import DateField
 #Form definition
 class AddReservation(FlaskForm):
 	confirmation = StringField('Confirmation', id="confirmation", validators=[DataRequired(), Length(1, 6)])
-	type = SelectField('Type', id="type", choices=[('airline', 'Airline'), ('hotel', 'Hotel'), 
-					  ('car', 'Car')], validators=[DataRequired()])
+	type = SelectField('Type', id="type", choices=[('Airline', 'Airline'), ('Hotel', 'Hotel'), 
+					  ('Car', 'Car')], validators=[DataRequired()])
 	company = StringField('Company', id="company", validators=[DataRequired(), Length(1,10)])
 	start_date = DateField('Start Date', id="start_date", format='%Y-%m-%d', validators=[DataRequired()])
 	end_date = DateField('End Date', id="end_date", format='%Y-%m-%d', validators=[DataRequired()])
