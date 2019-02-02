@@ -1,10 +1,13 @@
-#navbar {
-  background-color: rgb(5, 25, 60);
+.blank-space {
+  height: 2.5vh;
+  width: 100vw;
+  max-width: 100%;
 }
 
-.blank-space {
-  height: 5vh;
+.small-space {
+  height: 1.5vh;
   width: 100vw;
+  max-width: 100%;
 }
 
 .panel-heading {
@@ -18,4 +21,62 @@
 
 a {
   color: white !important;
+}
+
+#navbar {
+  background-color: rgb(5, 25, 60);
+}
+
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 5vh;
+  color: white;
+  text-align: center;
+  background-color: rgb(5, 25, 60);
+  max-width: 100%;
+}
+
+#home-outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 90vh;
+  max-width: 100%;
+}
+
+#home-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50vw;
+  height: 50vh;
+  max-width: 100%;
+}
+
+#home-text {
+  font-size: 2.5em;
+}
+
+#home-subtext {
+  font-size: 1.5em;
+}
+
+::placeholder {
+  color: rgb(90, 90, 90) !important;
 }

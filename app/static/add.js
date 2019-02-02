@@ -14,9 +14,14 @@ $(document).ready(function() {
 	  type : 'POST',
 	  url : '/add'
 	})
-	.done(function(response) {
+	.done(function() {
 	
-	// ADD OPTIONAL RESPONSE HERE
+      $('#confirmation').val('');
+	  $('#type').val('');
+	  $('#company').val('');
+	  $('#start_date').val('');
+	  $('#end_date').val('');
+	  $('#cost').val('');
 	
 	});
 	
