@@ -1,8 +1,8 @@
-"""reservation table
+"""Reservation table
 
-Revision ID: 0c555ff42d00
+Revision ID: d7014202c010
 Revises: 
-Create Date: 2019-01-28 09:54:08.540962
+Create Date: 2019-02-01 19:19:24.590142
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '0c555ff42d00'
+revision = 'd7014202c010'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,10 +22,10 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('confirmation', sa.String(length=10), nullable=True),
     sa.Column('type', sa.String(length=10), nullable=True),
-    sa.Column('company', sa.String(length=20), nullable=True),
-    sa.Column('start_date', sa.String(length=10), nullable=True),
-    sa.Column('end_date', sa.String(length=10), nullable=True),
-    sa.Column('cost', sa.Integer(), nullable=True),
+    sa.Column('company', sa.String(length=10), nullable=True),
+    sa.Column('start_date', sa.Date(), nullable=True),
+    sa.Column('end_date', sa.Date(), nullable=True),
+    sa.Column('cost', sa.Float(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_reservation_confirmation'), 'reservation', ['confirmation'], unique=True)
